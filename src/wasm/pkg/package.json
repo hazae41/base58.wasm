@@ -1,0 +1,24 @@
+{
+  "name": "base58_wasm",
+  "type": "module",
+  "collaborators": [
+    "hazae41 <4405263+hazae41@users.noreply.github.com>"
+  ],
+  "description": "WebAssembly port of Base58",
+  "version": "1.0.0",
+  "license": "Unlicense",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hazae41/base58.wasm"
+  },
+  "files": [
+    "base58_wasm_bg.wasm",
+    "base58_wasm.js",
+    "base58_wasm.d.ts"
+  ],
+  "main": "base58_wasm.js",
+  "types": "base58_wasm.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
