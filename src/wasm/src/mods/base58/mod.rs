@@ -1,10 +1,8 @@
-extern crate alloc;
-
-use alloc::string::String;
-
 use wasm_bindgen::prelude::*;
 
 use memory_wasm::Memory;
+
+use crate::rjse;
 
 #[wasm_bindgen]
 pub fn base58_encode(bytes: &Memory) -> String {
@@ -13,8 +11,5 @@ pub fn base58_encode(bytes: &Memory) -> String {
 
 #[wasm_bindgen]
 pub fn base58_decode(text: &str) -> Result<Memory, JsError> {
-    bs58::decode(text)
-        .into_vec()
-        .map(Memory::new)
-        .map_err(|_| JsError::new("base58_decode"))
+    rjse!(bs58::decode(text).into_vec().map(Memory::new))
 }
